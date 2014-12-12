@@ -37,7 +37,7 @@ class Canvas:
     f = open(filename + '.svg', 'w')
     f.write(canvas)
     f.close()
-    print "SVG file saved to Desktop"
+    print "File saved"
 
   def addHeader(self):
     return "<svg xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='" + str(self.width) + "' height='" + str(self.height) + "'>\n\n"
