@@ -19,9 +19,7 @@ class Canvas:
     canvas = "<g id='shape%s'>" % self.count
     points = []
     for vertex in shape:
-      a = str(vertex[0])
-      b = str(vertex[1])
-      points.append(a + "," + b)
+      points.append(str(vertex[0]) + "," + str(vertex[1]))
     point_string = " ".join(points)
     canvas += "<polygon points='" + point_string + "' style='fill:%s; stroke:%s; stroke-width:3; stroke-linejoin:miter;' />" % (fill_colour, border_colour)
     if centroid != None:
