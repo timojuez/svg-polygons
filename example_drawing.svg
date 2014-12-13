@@ -1,0 +1,15 @@
+<svg xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='500' height='500'>
+
+  <g id='shape0'>
+    <polygon points='100,70 325,210 60,300' style='fill:blue; stroke:red; fill-opacity:1.0; stroke-opacity:1.0; stroke-width:3; stroke-linejoin:miter;' />
+  </g>
+
+  <g id='shape1'>
+    <polygon points='455,346 39,231 80,312' style='fill:yellow; stroke:green; fill-opacity:0.75; stroke-opacity:0.75; stroke-width:3; stroke-linejoin:miter;' />
+  </g>
+
+  <g id='shape2'>
+    <circle cx='250' cy='250' r='20' style='stroke:black; fill:black; fill-opacity:0.5; stroke-opacity:0.5;' />
+  </g>
+
+</svg>
