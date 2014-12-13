@@ -11,16 +11,10 @@ class Canvas:
     self.width = width
     self.height = height
 
-
-  def draw(self, shape, border_colour='black', fill_colour=None, centroid=None):
+  def draw(self, shape, border_colour='black', fill_colour=None, opacity=1.0):
     canvas = "\n  <g id='shape%s'>" % self.count
-    points = []
-    for vertex in shape:
-      points.append(str(vertex[0]) + "," + str(vertex[1]))
-    point_string = " ".join(points)
-    canvas += "\n    <polygon points='" + point_string + "' style='fill:%s; stroke:%s; stroke-width:3; stroke-linejoin:miter;' />" % (fill_colour, border_colour)
-    if centroid != None:
-      canvas += "\n    <circle cx='%s' cy='%s' r='8' style='stroke:black; fill:black;' />" % (centroid[0], centroid[1])
+    points = [(str(vertex[0]) + "," + str(vertex[1])) for vertex in shape]
+    canvas += "\n    <polygon points='" + (" ".join(points)) + "' style='fill:%s; stroke:%s; fill-opacity:%s; stroke-opacity:%s; stroke-width:3; stroke-linejoin:miter;' />" % (fill_colour, border_colour, opacity, opacity)
     canvas += "\n  </g>\n"
     self.canvas += canvas
     self.count += 1
