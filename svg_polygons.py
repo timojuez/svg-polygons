@@ -25,14 +25,14 @@ class Canvas:
     self.canvas += canvas
     self.count += 1
 
-  def save(self, filename):
+  def save(self, filename='drawing'):
     canvas = self.addHeader()
     canvas += self.addCanvas()
     canvas += self.addFooter()
     f = open(filename + '.svg', 'w')
     f.write(canvas)
     f.close()
-    print "File saved"
+    print "File saved as %s.svg" % filename
 
   def clear(self):
     self.canvas = ''
