@@ -11,9 +11,6 @@ class Canvas:
     self.width = width
     self.height = height
 
-  def clear(self):
-    self.canvas = ''
-    self.count = 0
 
   def draw(self, shape, border_colour='black', fill_colour=None, centroid=None):
     canvas = "\n  <g id='shape%s'>" % self.count
@@ -36,6 +33,10 @@ class Canvas:
     f.write(canvas)
     f.close()
     print "File saved"
+
+  def clear(self):
+    self.canvas = ''
+    self.count = 0
 
   def addHeader(self):
     return "<svg xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' version='1.1' width='" + str(self.width) + "' height='" + str(self.height) + "'>\n"
