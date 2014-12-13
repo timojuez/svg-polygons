@@ -14,6 +14,7 @@ First import the module:
 Let's say you want to draw two triangles. These should be represented as a list of three tuples. Each tuple gives the x and y coordinates for a vertex of the triangle.
 
 > triangle1 = [(100, 70), (325, 210), (60, 300)]
+
 > triangle2 = [(455, 346), (39, 231), (80, 312)]
 
 Now create a Canvas object specifying its width and height (in this case the canvas is 500×500):
@@ -23,6 +24,7 @@ Now create a Canvas object specifying its width and height (in this case the can
 Now you can draw your triangles to the canvas, optioanlly specifying a border colour, fill colour, and opacity level:
 
 > my_drawing.polygon(triangle1, 'red', 'blue', 1.0)
+
 > my_drawing.polygon(triangle2, 'green', 'yellow', 0.75)
 
 If you want to draw a circle, specify the position of the circle and its radius, followed by the vorder colour, fill colour and opacity level:
