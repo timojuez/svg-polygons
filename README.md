@@ -21,13 +21,13 @@ Now create a Canvas object specifying its width and height (in this case the can
 
 > my_drawing = svg_polygons.Canvas(500, 500)
 
-Now you can draw your triangles to the canvas, optioanlly specifying a border colour, fill colour, and opacity level:
+Now you can draw your triangles to the canvas, optionally specifying a border colour, fill colour, and opacity level:
 
 > my_drawing.polygon(triangle1, 'red', 'blue', 1.0)
 
 > my_drawing.polygon(triangle2, 'green', 'yellow', 0.75)
 
-If you want to draw a circle, specify the position of the circle and its radius, followed by the vorder colour, fill colour and opacity level:
+If you want to draw a circle, specify the position of the circle and its radius, followed by the border colour, fill colour and opacity level:
 
 > my_drawing.circle((250, 250), 20, 'black', 'black', 0.5)
 
@@ -43,7 +43,7 @@ If you don't want a border or fill colour, use None to leave it transparent:
 
 > my_drawing.draw(triangle1, 'red', None)
 
-You can also specify colours using hexadecimal colour coding:
+You can also specify colours using a hex triplet:
 
 > my_drawing.polygon(triangle1, 'black', '#2E578C', 0.8)
 
