@@ -11,7 +11,7 @@ class Canvas:
     self.width = width
     self.height = height
 
-  def draw(self, shape, border_colour='black', fill_colour=None, opacity=1.0):
+  def polygon(self, shape, border_colour='black', fill_colour=None, opacity=1.0):
     canvas = "\n  <g id='shape%s'>" % self.count
     points = [(str(vertex[0]) + "," + str(vertex[1])) for vertex in shape]
     canvas += "\n    <polygon points='" + (" ".join(points)) + "' style='fill:%s; stroke:%s; fill-opacity:%s; stroke-opacity:%s; stroke-width:3; stroke-linejoin:miter;' />" % (fill_colour, border_colour, opacity, opacity)
