@@ -19,6 +19,13 @@ class Canvas:
     self.canvas += canvas
     self.count += 1
 
+  def circle(self, position, radius=1, border_colour='black', fill_colour=None, opacity=1.0):
+    canvas = "\n  <g id='shape%s'>" % self.count
+    canvas += "\n    <circle cx='%s' cy='%s' r='%s' style='stroke:%s; fill:%s; fill-opacity:%s; stroke-opacity:%s;' />" % (position[0], position[1], radius, border_colour, fill_colour, opacity, opacity)
+    canvas += "\n  </g>\n"
+    self.canvas += canvas
+    self.count += 1
+
   def save(self, filename='drawing'):
     canvas = self.addHeader()
     canvas += self.addCanvas()
