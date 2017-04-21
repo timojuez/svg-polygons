@@ -5,16 +5,22 @@ class Canvas:
   width = 0
   height = 0
   canvas = ''
+  captions = ''
   shape_count = 0
 
   def __init__(self, width=500, height=500):
     self.width = width
     self.height = height
 
-  def polygon(self, shape, border_colour='black', fill_colour=None, opacity=1.0):
+  def polygon(self, shape, border_colour='black', fill_colour=None, opacity=1.0, border_width=3, caption=None, caption_size=35):
     canvas = "\n  <g id='shape%s'>" % self.shape_count
     points = [(str(vertex[0]) + "," + str(vertex[1])) for vertex in shape]
-    canvas += "\n    <polygon points='" + (" ".join(points)) + "' style='fill:%s; stroke:%s; fill-opacity:%s; stroke-opacity:%s; stroke-width:3; stroke-linejoin:miter;' />" % (fill_colour, border_colour, opacity, opacity)
+    canvas += "\n    <polygon points='" + (" ".join(points)) + "' style='fill:%s; stroke:%s; fill-opacity:%s; stroke-opacity:%s; stroke-width:%s; stroke-linejoin:miter;' />" % (fill_colour, border_colour, opacity, opacity, border_width)
+    if caption:
+        X = [x for x,y in shape]
+        Y = [y for x,y in shape]
+        centre = (min(X)+(max(X)-min(X))/2, min(Y)+(max(Y)-min(Y))/2)
+        self.captions += '\n  <text x="%d" y="%d" font-family="Verdana" font-size="%d" fill="black">%s</text>'%(centre[0],centre[1],caption_size,caption)
     canvas += "\n  </g>\n"
     self.canvas += canvas
     self.shape_count += 1
@@ -46,4 +52,4 @@ class Canvas:
     return self.canvas + "\n"
 
   def addFooter(self):
-    return "</svg>"
+    return "%s\n</svg>"%self.captions
